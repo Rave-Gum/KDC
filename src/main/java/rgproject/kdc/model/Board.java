@@ -1,15 +1,17 @@
 package rgproject.kdc.model;
 
-//@Entity
+import javax.persistence.*;
+
+@Entity
 public class Board {
 
-    //@Id @GeneratedValue
-    //@Column(name = "MEMBER_ID")
+    @Id @GeneratedValue
+    @Column(name = "BOARD_ID")
     private Long id;
     private String name;
 
-    //@ManyToOne(fetch = FetchType.LAZY)
-    //@JoinColumn(name = "MEMBER_ID")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CATEGORY_ID")
     private Category category;
 
     public Long getId() {
