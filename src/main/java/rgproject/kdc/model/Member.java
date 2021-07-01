@@ -1,13 +1,14 @@
 package rgproject.kdc.model;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-//@Entity
+@Entity
 public class Member {
 
-    //@Id @GeneratedValue
-    //@Column(name = "MEMBER_ID")
+    @Id @GeneratedValue
+    @Column(name = "MEMBER_ID")
     private Long id;
     private String name;
     private String nickname;
@@ -18,10 +19,10 @@ public class Member {
     private int point;
     private int experience;
 
-    //@OneToMany(mappedBy = "member")
+    @OneToMany(mappedBy = "member")
     private List<Post> posts = new ArrayList<>();
 
-    //@OneToMany(mappedBy = "member")
+    @OneToMany(mappedBy = "member")
     private List<Comment> comments = new ArrayList<>();
 
     public Long getId() {

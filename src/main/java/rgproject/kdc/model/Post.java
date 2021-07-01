@@ -1,28 +1,29 @@
 package rgproject.kdc.model;
 
+import javax.persistence.*;
 import java.util.Date;
 
-//@Entity
+@Entity
 public class Post {
 
-    //@Id @GeneratedValue
-    //@Column(name = "POST_ID")
+    @Id @GeneratedValue
+    @Column(name = "POST_ID")
     private Long id;
     private Long categoryId;
     private String title;
-    //@Lob
+    @Lob
     private String content;
-    //@Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date createDate;
     private Long views;
     private String fileUrl;
 
-    //@ManyToOne(fetch = FetchType.LAZY)
-    //@JoinColumn(name = "BOARD_ID")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "BOARD_ID")
     private Board board;
 
-    //@ManyToOne(fetch = FetchType.LAZY)
-    //@JoinColumn(name = "MEMBER_ID")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "MEMBER_ID")
     private Member member;
 
     public Long getId() {

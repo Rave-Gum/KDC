@@ -1,17 +1,18 @@
 package rgproject.kdc.model;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-//@Entity
+@Entity
 public class Category {
 
-    //@Id @GeneratedValue
-    //@Column(name = "CATEGORY_ID")
+    @Id @GeneratedValue
+    @Column(name = "CATEGORY_ID")
     private Long id;
     private String name;
 
-    //@OneToMany(mappedBy = "category")
+    @OneToMany(mappedBy = "category")
     private List<Board> boards = new ArrayList<>();
 
     public Long getId() {
